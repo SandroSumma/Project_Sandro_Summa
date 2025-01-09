@@ -1,12 +1,14 @@
 public class Passenger {
     private String name;
     private int age;
-    private String adres;
+    private String address;
+    private int bagage;
 
-    public Passenger(String name, int age, String adres) {
+    public Passenger(String name, int age, String address , int bagage) {
         this.name = name;
         this.age = 0;
-        this.adres = adres;
+        this.address = address;
+        this.bagage = bagage;
     }
 
     public String getName() {
@@ -17,8 +19,13 @@ public class Passenger {
         return age;
     }
 
-    public String getAdres() {
-        return adres;
+    public String getAddress() {
+        return address;
     }
+
+    public int getBagage() {
+        return bagage;
+    }
+
 }
 

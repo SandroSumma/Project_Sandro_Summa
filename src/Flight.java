@@ -29,8 +29,17 @@ public class Flight {
         return false;
     }
 
+
     public void assignStaff(Staff staffMember) {
         staff.add(staffMember);
+    }
+
+    public int getEconomySeats(){
+        return economySeats;
+    }
+
+    public int getBusinessSeats(){
+        return businessSeats;
     }
 
     public String getFlightCode() {
