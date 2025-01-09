@@ -9,7 +9,6 @@ public class Flight {
     private List<Passenger> passengers;
     private List<Staff> staff;
 
-    // Constructor
     public Flight(String flightCode, String destination, int economySeats, int businessSeats) {
         this.flightCode = flightCode;
         this.destination = destination;
@@ -19,7 +18,6 @@ public class Flight {
         this.staff = new ArrayList<>();
     }
 
-    // Method to add passengers to the flight (either economy or business class)
     public boolean addPassenger(Passenger passenger, String ticketClass) {
         if (ticketClass.equalsIgnoreCase("economy") && economySeats > passengers.size()) {
             passengers.add(passenger);
@@ -31,12 +29,10 @@ public class Flight {
         return false;
     }
 
-    // Method to assign staff to a flight
     public void assignStaff(Staff staffMember) {
         staff.add(staffMember);
     }
 
-    // Getters
     public String getFlightCode() {
         return flightCode;
     }
