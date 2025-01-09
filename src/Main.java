@@ -5,11 +5,20 @@ import java.util.*;
 import java.awt.Desktop;
 import java.util.Scanner;
 
+/**
+ * De hoofdklaas van het programma. Deze bevat het keuzemenu en de methoden om passagiers, vluchten, tickets en personeel te beheren.
+ */
 class Main {
     static ArrayList<Passenger> passengers = new ArrayList<>();
     static ArrayList<Flight> flights = new ArrayList<>();
     static List<Ticket> tickets = new ArrayList<>();
 
+    /**
+     * De hoofdmethoden die de gebruikersinterface aanstuurt. Het toont een menu voor de gebruiker om keuzes te maken.
+     * Het behandelt de interactie met de gebruiker voor passagiers, vluchten, tickets, boarding, personeel, en vluchtinformatie.
+     *
+     * @param args command-line argumenten (niet gebruikt).
+     */
     public static void main(String[] args) {
         Staff.initializeStaff();
         Scanner scanner = new Scanner(System.in);
@@ -43,6 +52,12 @@ class Main {
         }
     }
 
+    /**
+     * Maakt een nieuwe passagier aan door naam, leeftijd, adres en bagagegewicht in te voeren.
+     * De passagier wordt alleen toegevoegd als deze nog niet bestaat in de lijst van passagiers.
+     *
+     * @param scanner De scanner waarmee de invoer van de gebruiker wordt gelezen.
+     */
     private static void createPassenger(Scanner scanner) {
         String name = "";
         while (name.trim().isEmpty()) {
@@ -103,6 +118,11 @@ class Main {
         System.out.println("Passagier aangemaakt.");
     }
 
+    /**
+     * Maakt een nieuwe vlucht aan door een vluchtcode, bestemming, en het aantal beschikbare stoelen in verschillende klassen in te voeren.
+     *
+     * @param scanner De scanner waarmee de invoer van de gebruiker wordt gelezen.
+     */
     private static void createFlight(Scanner scanner) {
         System.out.print("Voer de vluchtcode in: ");
         String flightCode = scanner.nextLine();
@@ -117,6 +137,12 @@ class Main {
         System.out.println("Vlucht aangemaakt.");
     }
 
+    /**
+     * Maakt een ticket aan voor een passagier op een vlucht in een bepaalde klasse.
+     * Controleert of de opgegeven vlucht en klasse geldig zijn.
+     *
+     * @param scanner De scanner waarmee de invoer van de gebruiker wordt gelezen.
+     */
     public static void createTicket(Scanner scanner) {
         System.out.print("Voer de naam van de passagier in: ");
         String name = scanner.nextLine();
@@ -136,6 +162,12 @@ class Main {
         System.out.println("Ticket aangemaakt voor " + name + " op vlucht " + flightCode + " in " + ticketClass + " klasse.");
     }
 
+    /**
+     * Boekt een passagier in voor een vlucht. Controleert of de passagier en het ticket geldig zijn,
+     * en of er nog beschikbare plaatsen in de geselecteerde klasse zijn.
+     *
+     * @param scanner De scanner waarmee de invoer van de gebruiker wordt gelezen.
+     */
     public static void boardPassenger(Scanner scanner) {
         System.out.println("Beschikbare vluchten:");
         for (Flight f : flights) {
@@ -192,7 +224,12 @@ class Main {
         }
     }
 
-
+    /**
+     * Wijs personeel toe aan een vlucht.
+     * Controleert of er personeel en vluchten beschikbaar zijn.
+     *
+     * @param scanner De scanner waarmee de invoer van de gebruiker wordt gelezen.
+     */
     private static void assignStaff(Scanner scanner) {
         if (flights.isEmpty() || Staff.getStaffList().isEmpty()) {
             System.out.println("Geen vluchten of personeel beschikbaar.");
@@ -224,6 +261,11 @@ class Main {
         System.out.println("Personeel niet gevonden.");
     }
 
+    /**
+     * Print de informatie van een vlucht naar een tekstbestand en opent dit bestand, indien mogelijk.
+     *
+     * @param scanner De scanner waarmee de invoer van de gebruiker wordt gelezen.
+     */
     private static void printFlightInfo(Scanner scanner) {
         System.out.println("Voer de vluchtcode in: ");
         String flightCode = scanner.nextLine();
@@ -257,6 +299,4 @@ class Main {
         }
         System.out.println("Vlucht niet gevonden.");
     }
-
-
 }
