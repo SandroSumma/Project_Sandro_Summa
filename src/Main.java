@@ -26,17 +26,17 @@ class Main {
             scanner.nextLine();
 
             switch (keuze) {
-                case 1 -> createPassenger(scanner);
-                case 2 -> createFlight(scanner);
-                case 3 -> createTicket(scanner);
-                case 4 -> assignStaff(scanner);
-                case 5 -> printFlightInfo(scanner);
-                case 0 -> {
+                case 1 : createPassenger(scanner);
+                case 2 : createFlight(scanner);
+                case 3 : createTicket(scanner);
+                case 4 : assignStaff(scanner);
+                case 5 : printFlightInfo(scanner);
+                case 0 : {
                     System.out.println("Programma afgesloten.");
                     scanner.close();
                     return;
                 }
-                default -> System.out.println("Ongeldige keuze. Probeer opnieuw.");
+                default : System.out.println("Ongeldige keuze. Probeer opnieuw.");
             }
         }
     }
@@ -111,7 +111,6 @@ class Main {
             return;
         }
 
-        // Toon beschikbare vluchten
         System.out.println("Beschikbare vluchten:");
         for (int i = 0; i < flights.size(); i++) {
             System.out.println((i + 1) + ". " + flights.get(i).getFlightCode() + " naar " + flights.get(i).getDestination());
@@ -122,16 +121,14 @@ class Main {
 
         Flight selectedFlight = flights.get(flightIndex);
 
-        // Toon beschikbaar personeel
         System.out.println("Beschikbaar personeel:");
-        Staff.printStaff();  // Toon personeel uit Staff-klasse
+        Staff.printStaff();
         System.out.print("Voer de naam van het personeel in dat je wilt toewijzen: ");
         String staffName = scanner.nextLine();
 
-        // Zoek het personeel en wijs het toe aan de vlucht
         for (Staff s : Staff.getStaffList()) {
             if (s.toString().equalsIgnoreCase(staffName)) {
-                selectedFlight.assignStaff(s);  // Wijs personeel toe aan de vlucht
+                selectedFlight.assignStaff(s);
                 System.out.println(s + " is toegewezen aan vlucht " + selectedFlight.getFlightCode());
                 return;
             }

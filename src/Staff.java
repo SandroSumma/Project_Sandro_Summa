@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Staff {
-    private String name;  // Naam van het personeelslid
-    private static List<Staff> staffList = new ArrayList<>();  // Lijst van personeel
+    private String name;
+    private static List<Staff> staffList = new ArrayList<>();
 
     // Constructor voor individueel personeel
     public Staff(String name) {
