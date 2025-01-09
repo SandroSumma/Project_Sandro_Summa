@@ -1,8 +1,10 @@
+package Classes;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * De Staff klasse vertegenwoordigt een personeelslid van de luchtvaartmaatschappij.
+ * De Classes.Staff klasse vertegenwoordigt een personeelslid van de luchtvaartmaatschappij.
  * Het biedt methoden om personeel te initialiseren, op te halen en weer te geven.
  */
 public class Staff {

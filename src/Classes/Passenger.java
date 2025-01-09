@@ -1,5 +1,7 @@
+package Classes;
+
 /**
- * De Passenger klasse vertegenwoordigt een passagier met persoonlijke informatie zoals naam, leeftijd, adres en bagage.
+ * De Classes.Passenger klasse vertegenwoordigt een passagier met persoonlijke informatie zoals naam, leeftijd, adres en bagage.
  * Het biedt toegang tot deze gegevens via getter-methoden.
  */
 public class Passenger {

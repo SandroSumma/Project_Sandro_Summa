@@ -1,3 +1,8 @@
+import Classes.Flight;
+import Classes.Passenger;
+import Classes.Staff;
+import Classes.Ticket;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -159,7 +164,7 @@ class Main {
         }
 
         tickets.add(new Ticket(name, flightCode, ticketClass));
-        System.out.println("Ticket aangemaakt voor " + name + " op vlucht " + flightCode + " in " + ticketClass + " klasse.");
+        System.out.println("Classes.Ticket aangemaakt voor " + name + " op vlucht " + flightCode + " in " + ticketClass + " klasse.");
     }
 
     /**

@@ -1,5 +1,7 @@
+package Classes;
+
 /**
- * De Ticket klasse vertegenwoordigt een ticket dat aan een passagier wordt toegewezen voor een specifieke vlucht.
+ * De Classes.Ticket klasse vertegenwoordigt een ticket dat aan een passagier wordt toegewezen voor een specifieke vlucht.
  * Het bevat informatie over de passagier, de vlucht en de klasse van het ticket.
  */
 public class Ticket {

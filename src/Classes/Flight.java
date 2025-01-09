@@ -1,8 +1,10 @@
+package Classes;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * De Flight klasse vertegenwoordigt een vlucht met een vluchtcode, bestemming, beschikbare stoelen,
+ * De Classes.Flight klasse vertegenwoordigt een vlucht met een vluchtcode, bestemming, beschikbare stoelen,
  * passagiers en personeel.
  * Het biedt methoden om passagiers toe te voegen, personeel toe te wijzen en vluchtinformatie op te halen.
  */
